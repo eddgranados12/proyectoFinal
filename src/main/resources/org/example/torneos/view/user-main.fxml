@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<VBox xmlns="http://javafx.com/javafx/8.0.171"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.torneos.controller.UserMainController"
+      spacing="10" alignment="CENTER">
+    <Label text="Panel de Usuario" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+    <HBox spacing="10" alignment="CENTER">
+        <TextField fx:id="searchField" promptText="Buscar equipo..."/>
+        <Button text="Buscar por Nombre" onAction="#handleBuscarPorNombre"/>
+        <Button text="Buscar por ID" onAction="#handleBuscarPorId"/>
+    </HBox>
+    <TableView fx:id="equiposTable" prefWidth="600" prefHeight="300">
+        <columns>
+            <TableColumn text="ID" prefWidth="50">
+                <cellValueFactory><PropertyValueFactory property="id"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Nombre" prefWidth="200">
+                <cellValueFactory><PropertyValueFactory property="nombre"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Categoría" prefWidth="150">
+                <cellValueFactory><PropertyValueFactory property="categoria"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Puntos" prefWidth="100">
+                <cellValueFactory><PropertyValueFactory property="puntos"/></cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+    <Button text="Ver Resultados" onAction="#handleVerResultados" prefWidth="200"/>
+    <Button text="Cerrar Sesión" onAction="#handleLogout" prefWidth="200"/>
+</VBox>

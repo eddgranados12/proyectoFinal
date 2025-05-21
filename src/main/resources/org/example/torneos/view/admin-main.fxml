@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/8.0.171"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.torneos.controller.AdminMainController"
+      spacing="10" alignment="CENTER">
+    <Label text="Panel de Administración" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+    <Button text="Registrar Equipo" onAction="#handleRegistrarEquipo" prefWidth="200"/>
+    <Button text="Gestionar Partidos" onAction="#handleGestionarPartidos" prefWidth="200"/>
+    <Button text="Cerrar Sesión" onAction="#handleLogout" prefWidth="200"/>
+</VBox>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<VBox xmlns="http://javafx.com/javafx/8.0.171"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.torneos.controller.EquipoController"
+      spacing="10">
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Button text="Volver" onAction="#handleVolver"/>
+        <Label text="Gestión de Equipos" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+    </HBox>
+
+    <!-- Formulario para registrar equipos -->
+    <GridPane hgap="10" vgap="10">
+        <Label text="Nombre:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="nombreField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Categoría:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="categoriaField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Button text="Registrar Equipo" onAction="#handleRegistrarEquipo"
+                GridPane.rowIndex="2" GridPane.columnIndex="1" GridPane.halignment="RIGHT"/>
+    </GridPane>
+
+    <!-- Tabla de equipos -->
+    <TableView fx:id="equiposTable" prefHeight="300">
+        <columns>
+            <TableColumn text="ID" prefWidth="50">
+                <cellValueFactory><PropertyValueFactory property="id"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Nombre" prefWidth="200">
+                <cellValueFactory><PropertyValueFactory property="nombre"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Categoría" prefWidth="150">
+                <cellValueFactory><PropertyValueFactory property="categoria"/></cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+</VBox>

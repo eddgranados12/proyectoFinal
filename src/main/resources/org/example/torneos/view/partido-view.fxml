@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<VBox xmlns="http://javafx.com/javafx/8.0.171"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.torneos.controller.PartidoController"
+      spacing="10">
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Button text="Volver" onAction="#handleVolver"/>
+        <Label text="Gestión de Partidos" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+    </HBox>
+
+    <!-- Formulario para programar partidos -->
+    <GridPane hgap="10" vgap="10">
+        <Label text="Equipo Local:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="equipoLocalCombo" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Equipo Visitante:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="equipoVisitanteCombo" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Fecha y Hora:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="fechaPicker" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+        <TextField fx:id="horaField" promptText="HH:mm" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+
+        <Button text="Programar Partido" onAction="#handleProgramarPartido"
+                GridPane.rowIndex="3" GridPane.columnIndex="1" GridPane.halignment="RIGHT"/>
+    </GridPane>
+
+    <!-- Tabla de partidos -->
+    <TableView fx:id="partidosTable" prefHeight="300">
+        <columns>
+            <TableColumn text="ID" prefWidth="50">
+                <cellValueFactory><PropertyValueFactory property="id"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Local" prefWidth="150">
+                <cellValueFactory><PropertyValueFactory property="equipoLocal.nombre"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Visitante" prefWidth="150">
+                <cellValueFactory><PropertyValueFactory property="equipoVisitante.nombre"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Fecha" prefWidth="120">
+                <cellValueFactory><PropertyValueFactory property="fechaHora"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Resultado" prefWidth="100">
+                <cellValueFactory><PropertyValueFactory property="resultado"/></cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+</VBox>
