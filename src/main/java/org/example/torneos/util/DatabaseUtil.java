@@ -5,17 +5,14 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import  org.example.torneos.BD.MySQLConnection;
+
 public class DatabaseUtil {
     private static DatabaseUtil instance;
-    private Connection connection;
 
     private DatabaseUtil() {
-        try {
-            connection = DriverManager.getConnection("jdbc:sqlite:torneo.db");
-            initializeDatabase();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        // Inicialización de la conexión
+        MySQLConnection.Connect();
     }
 
     public static synchronized DatabaseUtil getInstance() {
@@ -26,10 +23,14 @@ public class DatabaseUtil {
     }
 
     public Connection getConnection() {
-        return connection;
+        return MySQLConnection.getConnection();
     }
 
-    private void initializeDatabase() {
-        // Crear tablas si no existen
+    public void disconnect() {
+        MySQLConnection.Disconnect();
+    }
+
+    public void initializeDatabase() {
+
     }
 }

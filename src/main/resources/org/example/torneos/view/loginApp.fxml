@@ -22,7 +22,7 @@
         <TextField fx:id="usernameField" promptText="Nombre de usuario" GridPane.columnIndex="0" GridPane.rowIndex="1" />
 
         <PasswordField fx:id="passwordField" promptText="contraseña" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-        <Button text="Ingresar"  GridPane.columnIndex="0" GridPane.rowIndex="4"  GridPane.halignment="CENTER"/>
+        <Button text="Ingresar" onAction="#handleLogin" GridPane.columnIndex="0" GridPane.rowIndex="4"  GridPane.halignment="CENTER"/>
         <Hyperlink text="olvide mi contraseña" GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.halignment="CENTER"/>
     </GridPane>
 </VBox>

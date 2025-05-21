@@ -1,8 +1,8 @@
 package org.example.torneos.model;
 
 public class Usuario {
-    private Integer idUsuario;
-    private String nombreUsuario;
+    private Integer id_usuario;
+    private String usuario;
     private String rol;
     private String contrasena;
 
@@ -10,20 +10,22 @@ public class Usuario {
     public Usuario() {}
 
     // Getters y Setters
-    public Integer getIdUsuario() {
-        return idUsuario;
+
+
+    public Integer getId_usuario() {
+        return id_usuario;
     }
 
-    public void setIdUsuario(Integer idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setId_usuario(Integer id_usuario) {
+        this.id_usuario = id_usuario;
     }
 
-    public String getNombreUsuario() {
-        return nombreUsuario;
+    public String getUsuario() {
+        return usuario;
     }
 
-    public void setNombreUsuario(String nombreUsuario) {
-        this.nombreUsuario = nombreUsuario;
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 
     public String getRol() {
