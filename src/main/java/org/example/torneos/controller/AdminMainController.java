@@ -12,7 +12,7 @@ public class AdminMainController {
 
     @FXML
     private void handleRegistrarEquipo() throws Exception {
-        mainApp.showEquipoView();
+        mainApp.showRegistroEquipoView();
     }
 
     @FXML
@@ -24,4 +24,22 @@ public class AdminMainController {
     private void handleLogout() throws Exception {
         mainApp.showLoginView();
     }
+
+
+    @FXML
+    private void handleRegistrarJugador() {
+        mainApp.showRegistroJugadorView();
+    }
+
+    @FXML
+    private void handleRegistrarPartido() {
+        mainApp.showRegistroPartidoView();
+    }
+
+    // En AdminMainController.java
+    @FXML
+    private void handleRegistrarTorneo() {
+        mainApp.showRegistroTorneoView();
+    }
+
 }

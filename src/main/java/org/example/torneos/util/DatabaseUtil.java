@@ -12,7 +12,7 @@ public class DatabaseUtil {
 
     private DatabaseUtil() {
         // Inicialización de la conexión
-        MySQLConnection.Connect();
+        Connection conn = MySQLConnection.getConnection();
     }
 
     public static synchronized DatabaseUtil getInstance() {

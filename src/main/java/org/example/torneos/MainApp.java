@@ -11,6 +11,8 @@ import javafx.stage.StageStyle;
 import org.example.torneos.controller.*;
 import org.example.torneos.model.Usuario;
 
+import java.io.IOException;
+
 public class MainApp extends Application {
 
     private Stage primaryStage;
@@ -91,6 +93,85 @@ public class MainApp extends Application {
         controller.setMainApp(this);
 
         primaryStage.setScene(new Scene(root));
+    }
+
+    // En MainApp.java
+    public void showRegistroJugadorView() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/torneos/view/registro-jugador.fxml"));
+            Parent root = loader.load();
+
+            RegistroJugadorController controller = loader.getController();
+            controller.setMainApp(this);
+
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setTitle("Registro de Jugador");
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // En MainApp.java
+    public void showRegistroPartidoView() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/torneos/view/registro-partido.fxml"));
+            Parent root = loader.load();
+
+            RegistroJugadorController controller = loader.getController();
+            controller.setMainApp(this);
+
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setTitle("Registro de Partido");
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // En MainApp.java
+    public void showRegistroTorneoView() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/torneos/view/registro-torneo.fxml"));
+            Parent root = loader.load();
+
+            RegistroTorneoController controller = loader.getController();
+            controller.setMainApp(this);
+
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setTitle("Registro de Torneo");
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void showRegistroEquipoView() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/torneos/view/registro-equipo.fxml"));
+            Parent root = loader.load();
+
+            RegistroEquipoController controller = loader.getController();
+            controller.setMainApp(this);
+
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setTitle("Registro de Equipo");
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void main(String[] args) {
