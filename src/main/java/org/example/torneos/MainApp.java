@@ -16,17 +16,6 @@ public class MainApp extends Application {
     private Stage primaryStage;
     private Stage loginStage;
 
-    /*
-    @Override
-    public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("loginApp.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
-        stage.setScene(scene);
-        stage.show();
-    }
-
-     */
 
     @Override
 
@@ -59,6 +48,9 @@ public class MainApp extends Application {
     public void showAdminMainView() throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/torneos/view/admin-main.fxml"));
         Parent root = loader.load();
+
+        AdminMainController controller = loader.getController();
+        controller.setMainApp(this);
 
         primaryStage.setScene(new Scene(root));
         primaryStage.setTitle("Panel de Administración");
@@ -101,7 +93,6 @@ public class MainApp extends Application {
         primaryStage.setScene(new Scene(root));
     }
 
-    //
     public static void main(String[] args) {
         launch();
     }
