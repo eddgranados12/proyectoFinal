@@ -8,30 +8,46 @@
 
 <VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="org.example.torneos.controller.RegistroEquipoController"
-      spacing="10" style="-fx-padding: 20;">
+      spacing="30"
+      alignment="CENTER"
+      style="-fx-background-color: linear-gradient(to bottom, #00b894, #55efc4); -fx-padding: 40;">
 
-    <Label text="Registro de Equipo" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+    <Label text="Registro de Equipo"
+           style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: white;
+                  -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.6), 8, 0.5, 0, 2);"/>
 
-    <GridPane hgap="10" vgap="10">
-        <!-- Fila 0 -->
-        <Label text="Nombre:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
-        <TextField fx:id="nombreField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+    <VBox spacing="20"
+          style="-fx-background-color: rgba(255,255,255,0.95); -fx-background-radius: 20;
+                 -fx-padding: 30; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 10, 0, 0, 4);">
 
-        <!-- Fila 1 -->
-        <Label text="Categoría:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
-        <ComboBox fx:id="categoriaCombo" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+        <GridPane hgap="15" vgap="15" alignment="CENTER">
+            <!-- Fila 0 -->
+            <Label text="Nombre:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="nombreField" GridPane.rowIndex="0" GridPane.columnIndex="1"
+                       promptText="Nombre del equipo"/>
 
-        <!-- Fila 2 -->
-        <Label text="Fecha Creación:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
-        <DatePicker fx:id="fechaCreacionPicker" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+            <!-- Fila 1 -->
+            <Label text="Categoría:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="categoriaCombo" GridPane.rowIndex="1" GridPane.columnIndex="1"
+                      promptText="Seleccione una categoría"/>
 
-        <!-- Fila 3 -->
-        <Label text="Estado:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
-        <ComboBox fx:id="statusCombo" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
-    </GridPane>
+            <!-- Fila 2 -->
+            <Label text="Fecha Creación:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <DatePicker fx:id="fechaCreacionPicker" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
 
-    <HBox spacing="10" alignment="CENTER_RIGHT">
-        <Button text="Guardar" onAction="#handleGuardar" style="-fx-font-weight: bold;"/>
-        <Button text="Cancelar" onAction="#handleCancelar"/>
-    </HBox>
+            <!-- Fila 3 -->
+            <Label text="Estado:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="statusCombo" GridPane.rowIndex="3" GridPane.columnIndex="1"
+                      promptText="Activo / Inactivo"/>
+        </GridPane>
+
+        <HBox spacing="20" alignment="CENTER_RIGHT">
+            <Button text="Guardar" onAction="#handleGuardar"
+                    style="-fx-background-color: #00cec9; -fx-text-fill: white; -fx-font-size: 13px;
+                           -fx-font-weight: bold; -fx-background-radius: 10; -fx-padding: 10 20;"/>
+            <Button text="Cancelar" onAction="#handleCancelar"
+                    style="-fx-background-color: #d63031; -fx-text-fill: white; -fx-font-size: 13px;
+                           -fx-font-weight: bold; -fx-background-radius: 10; -fx-padding: 10 20;"/>
+        </HBox>
+    </VBox>
 </VBox>

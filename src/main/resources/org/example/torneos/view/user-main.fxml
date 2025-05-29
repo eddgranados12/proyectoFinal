@@ -5,34 +5,48 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
 <?import javafx.scene.control.cell.PropertyValueFactory?>
+
 <VBox xmlns="http://javafx.com/javafx/8.0.171"
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="org.example.torneos.controller.UserMainController"
-      spacing="10" alignment="CENTER">
-    <Label text="Panel de Usuario" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
-    <HBox spacing="10" alignment="CENTER">
-        <TextField fx:id="searchField" promptText="Buscar equipo..."/>
-        <Button text="Buscar por Nombre" onAction="#handleBuscarPorNombre"/>
-        <Button text="Buscar por ID" onAction="#handleBuscarPorId"/>
+      spacing="20" alignment="CENTER"
+      style="-fx-background-color: linear-gradient(to bottom right, #43cea2, #185a9d); -fx-padding: 40;">
+
+    <Label text="Panel de Usuario"
+           style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+
+    <HBox spacing="15" alignment="CENTER">
+        <TextField fx:id="searchField" promptText="Buscar equipo..."
+                   style="-fx-background-radius: 10; -fx-padding: 8; -fx-border-color: #ffffff; -fx-border-radius: 10;"/>
+        <Button text="Buscar por Nombre" onAction="#handleBuscarPorNombre"
+                style="-fx-background-color: #ff6f61; -fx-text-fill: white; -fx-background-radius: 8;"/>
+        <Button text="Buscar por ID" onAction="#handleBuscarPorId"
+                style="-fx-background-color: #ff6f61; -fx-text-fill: white; -fx-background-radius: 8;"/>
     </HBox>
-    <TableView fx:id="equiposTable" prefWidth="600" prefHeight="300">
+
+    <TableView fx:id="equiposTable" prefWidth="700" prefHeight="350"
+               style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: white;">
         <columns>
-            <TableColumn text="ID" prefWidth="50">
+            <TableColumn text="ID" prefWidth="60">
                 <cellValueFactory><PropertyValueFactory property="id"/></cellValueFactory>
             </TableColumn>
-            <TableColumn text="Nombre" prefWidth="200">
+            <TableColumn text="Nombre" prefWidth="220">
                 <cellValueFactory><PropertyValueFactory property="nombre"/></cellValueFactory>
             </TableColumn>
-            <TableColumn text="Categoría" prefWidth="150">
+            <TableColumn text="Categoría" prefWidth="160">
                 <cellValueFactory><PropertyValueFactory property="categoria"/></cellValueFactory>
             </TableColumn>
-            <TableColumn text="Puntos" prefWidth="100">
+            <TableColumn text="Puntos" prefWidth="120">
                 <cellValueFactory><PropertyValueFactory property="puntos"/></cellValueFactory>
             </TableColumn>
         </columns>
     </TableView>
-    <Button text="Ver Resultados" onAction="#handleVerResultados" prefWidth="200"/>
-    <Button text="Cerrar Sesión" onAction="#handleLogout" prefWidth="200"/>
+
+    <HBox spacing="20">
+        <Button text="Ver Resultados" onAction="#handleVerResultados" prefWidth="200"
+                style="-fx-background-color: #00c9ff; -fx-text-fill: white; -fx-background-radius: 10;"/>
+        <Button text="Cerrar Sesión" onAction="#handleLogout" prefWidth="200"
+                style="-fx-background-color: #ff416c; -fx-text-fill: white; -fx-background-radius: 10;"/>
+    </HBox>
 </VBox>

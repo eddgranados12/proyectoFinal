@@ -121,7 +121,7 @@ public class MainApp extends Application {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/torneos/view/registro-partido.fxml"));
             Parent root = loader.load();
 
-            RegistroJugadorController controller = loader.getController();
+            RegistroPartidoController  controller = loader.getController();
             controller.setMainApp(this);
 
             Stage stage = new Stage();

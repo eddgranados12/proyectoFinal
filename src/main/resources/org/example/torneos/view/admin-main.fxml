@@ -9,12 +9,37 @@
 <VBox xmlns="http://javafx.com/javafx/8.0.171"
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="org.example.torneos.controller.AdminMainController"
-      spacing="10" alignment="CENTER">
-    <Label text="Panel de Administración" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
-    <Button text="Registrar Jugador" onAction="#handleRegistrarJugador" prefWidth="200"/>
-    <Button text="Registrar Equipo" onAction="#handleRegistrarEquipo" prefWidth="200"/>
-    <Button text="Registrar Torneo" onAction="#handleRegistrarTorneo" prefWidth="200"/>
-    <Button text="Registrar Partido" onAction="#handleRegistrarPartido" prefWidth="200"/>
-    <Button text="Gestionar Partido" onAction="#handleGestionarPartidos" prefWidth="200"/>
-    <Button text="Cerrar Sesión" onAction="#handleLogout" prefWidth="200"/>
+      alignment="CENTER"
+      spacing="30"
+      style="-fx-background-color: linear-gradient(to bottom, #1e3c72, #2a5298); -fx-padding: 50;">
+
+    <Label text="Panel de Administración"
+           style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: white;
+                  -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.6), 8, 0.5, 0, 2);"/>
+
+    <VBox spacing="20"
+          alignment="CENTER"
+          style="-fx-background-color: rgba(255,255,255,0.9); -fx-background-radius: 20;
+                 -fx-padding: 40; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 10, 0, 0, 4);">
+
+        <Button text="Registrar Jugador" onAction="#handleRegistrarJugador"
+                style="-fx-background-color: #00cec9; -fx-text-fill: white; -fx-font-size: 14px;
+                       -fx-font-weight: bold; -fx-background-radius: 12; -fx-padding: 12 30;"/>
+        <Button text="Registrar Equipo" onAction="#handleRegistrarEquipo"
+                style="-fx-background-color: #fd79a8; -fx-text-fill: white; -fx-font-size: 14px;
+                       -fx-font-weight: bold; -fx-background-radius: 12; -fx-padding: 12 30;"/>
+        <Button text="Registrar Torneo" onAction="#handleRegistrarTorneo"
+                style="-fx-background-color: #ffeaa7; -fx-text-fill: #2d3436; -fx-font-size: 14px;
+                       -fx-font-weight: bold; -fx-background-radius: 12; -fx-padding: 12 30;"/>
+        <Button text="Registrar Partido" onAction="#handleRegistrarPartido"
+                style="-fx-background-color: #55efc4; -fx-text-fill: #2d3436; -fx-font-size: 14px;
+                       -fx-font-weight: bold; -fx-background-radius: 12; -fx-padding: 12 30;"/>
+        <Button text="Gestionar Partido" onAction="#handleGestionarPartidos"
+                style="-fx-background-color: #a29bfe; -fx-text-fill: white; -fx-font-size: 14px;
+                       -fx-font-weight: bold; -fx-background-radius: 12; -fx-padding: 12 30;"/>
+        <Separator style="-fx-background-color: #ccc; -fx-padding: 10 0;"/>
+        <Button text="Cerrar Sesión" onAction="#handleLogout"
+                style="-fx-background-color: #d63031; -fx-text-fill: white; -fx-font-size: 14px;
+                       -fx-font-weight: bold; -fx-background-radius: 12; -fx-padding: 12 30;"/>
+    </VBox>
 </VBox>

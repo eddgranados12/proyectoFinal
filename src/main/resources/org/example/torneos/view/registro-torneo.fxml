@@ -6,33 +6,44 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="org.example.torneos.controller.RegistroTorneoController"
-      spacing="10" style="-fx-padding: 20;">
+      spacing="20"
+      alignment="CENTER"
+      style="-fx-background-color: linear-gradient(to right, #ffecd2, #fcb69f); -fx-padding: 40;">
 
-    <Label text="Registro de Torneo" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+    <Label text="Registro de Torneo"
+           style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #4a4a4a;"/>
 
-    <GridPane hgap="10" vgap="10">
+    <GridPane hgap="15" vgap="15"
+              style="-fx-background-color: rgba(255,255,255,0.8); -fx-background-radius: 15; -fx-padding: 25; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0, 0, 3);">
+
         <!-- Fila 0 -->
         <Label text="Nombre:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
-        <TextField fx:id="nombreField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+        <TextField fx:id="nombreField" GridPane.rowIndex="0" GridPane.columnIndex="1"
+                   style="-fx-background-radius: 8; -fx-border-color: #ddd; -fx-padding: 8;"/>
 
         <!-- Fila 1 -->
         <Label text="Fecha Inicio:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
-        <DatePicker fx:id="fechaInicioPicker" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+        <DatePicker fx:id="fechaInicioPicker" GridPane.rowIndex="1" GridPane.columnIndex="1"
+                    style="-fx-background-radius: 8;"/>
 
         <!-- Fila 2 -->
         <Label text="Fecha Fin:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
-        <DatePicker fx:id="fechaFinPicker" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+        <DatePicker fx:id="fechaFinPicker" GridPane.rowIndex="2" GridPane.columnIndex="1"
+                    style="-fx-background-radius: 8;"/>
 
         <!-- Fila 3 -->
         <Label text="Categoría:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
-        <ComboBox fx:id="categoriaCombo" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+        <ComboBox fx:id="categoriaCombo" GridPane.rowIndex="3" GridPane.columnIndex="1"
+                  style="-fx-background-radius: 8;"/>
     </GridPane>
 
-    <HBox spacing="10" alignment="CENTER_RIGHT">
-        <Button text="Guardar" onAction="#handleGuardar" style="-fx-font-weight: bold;"/>
-        <Button text="Cancelar" onAction="#handleCancelar"/>
+    <HBox spacing="20" alignment="CENTER_RIGHT">
+        <Button text="Guardar" onAction="#handleGuardar"
+                style="-fx-background-color: #00b894; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10; -fx-padding: 10 20;"/>
+        <Button text="Cancelar" onAction="#handleCancelar"
+                style="-fx-background-color: #d63031; -fx-text-fill: white; -fx-background-radius: 10; -fx-padding: 10 20;"/>
     </HBox>
 </VBox>
-
